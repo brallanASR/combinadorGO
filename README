@@ -1,34 +1,24 @@
-Combinador de archivos XLSX
+Combinador de Archivos XLSX
 
-Este programa combina archivos XLSX basándose en sus nombres. Es capaz de agrupar y combinar archivos cuyos nombres contienen las palabras "fc", "fcc" o "fex".
-Uso
-
-    Coloca todos los archivos XLSX que desees combinar en el mismo directorio que el programa.
-    Ejecuta el programa.
-    Se generará un archivo combinado para cada categoría ("fc", "fcc" o "fex") en el formato: documento combinado [CATEGORÍA] [FECHA Y HORA].xlsx.
-
+Este programa combina varios archivos XLSX en un solo archivo basado en palabras clave específicas presentes en el nombre del archivo (en este caso, fcc, fex, y fc). Los archivos que contienen una palabra clave específica en su nombre se agrupan en un libro de trabajo, y cada archivo se convierte en una hoja dentro de ese libro.
 Requisitos
 
-    Go 1.21.1 o superior.
-    Biblioteca github.com/xuri/excelize/v2.
+    Go (Versión 1.21.1 o superior)
+    Librería excelize v2 de GitHub
 
-Instalación
+Instrucciones para ejecutar
 
-    Asegúrate de tener Go instalado en tu máquina.
-    Instala la biblioteca excelize usando el comando:
+    Coloque todos los archivos XLSX que desea combinar en el mismo directorio que el programa.
 
-    sh
+    Ejecute el programa usando:
 
-go get github.com/xuri/excelize/v2
-
-Clona o descarga este repositorio en tu máquina local.
-Compila y ejecuta el programa utilizando:
-
-sh
+    bash
 
     go run combinadorxlsx.go
 
+    Busque los archivos combinados en el directorio. Estarán nombrados como documento combinado [KEYWORD] [TIMESTAMP].xlsx, donde [KEYWORD] es fcc, fex, o fc y [TIMESTAMP] es la fecha y hora de creación.
+
 Consideraciones
 
-    Actualmente, el programa solo considera la primera hoja de cada archivo XLSX para la combinación.
-    Asegúrate de que los archivos que desees combinar se encuentren en el mismo directorio que el programa antes de ejecutarlo.
+    Los archivos que contienen fcc, fex, y fc en su nombre se tratan como diferentes categorías y se combinan por separado.
+    Asegúrese de que los archivos a combinar estén en el mismo formato y tengan las mismas columnas para obtener resultados óptimos.
