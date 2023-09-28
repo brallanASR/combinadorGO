@@ -1,0 +1,8 @@
+func processFile(filename string, combinedFile *excelize.File, sheets *[]SheetInfo) {
+	fmt.Printf("Procesando archivo: %s\n", filename)
+	_, err := excelize.OpenFile(filename)
+	if err != nil {
+		log.Fatalf("Error al abrir el archivo %s: %v", filename, err)
+	}
+
+    combinar el contenido de todass las hojas y los totales colocarlos en una sola hoja y consolidar las hojas anteriores en ella
